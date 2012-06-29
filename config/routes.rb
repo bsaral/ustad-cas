@@ -5,6 +5,8 @@ OauthProviderDemo::Application.routes.draw do
   match '/auth/:provider/callback', :to => 'authentications#create'
   match '/auth/failure', :to => 'authentications#failure'
 
+  match '/auth/facebook', as: :auth_facebook
+
   # Provider stuff
   match '/auth/josh_id/authorize' => 'auth#authorize'
   match '/auth/josh_id/access_token' => 'auth#access_token'

@@ -1,7 +1,6 @@
 source 'http://rubygems.org'
 
 gem 'rails', '3.1.3'
-gem 'mysql2'
 gem 'execjs'
 gem 'therubyracer'
 
@@ -18,3 +17,11 @@ gem 'jquery-rails'
 gem 'devise', :git => 'git://github.com/plataformatec/devise.git'
 gem 'omniauth'
 gem 'omniauth-facebook'
+
+group :development, :test do
+    gem 'mysql2'
+end
+group :production do
+  gem 'pg'
+  gem 'activerecord-postgresql-adapter'
+end

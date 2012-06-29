@@ -2,6 +2,8 @@ source 'http://rubygems.org'
 
 gem 'rails', '3.1.3'
 gem 'mysql2'
+gem 'execjs'
+gem 'therubyracer'
 
 # asset pipeline
 group :assets do
@@ -15,3 +17,4 @@ gem 'jquery-rails'
 # gems for omniauth and devise
 gem 'devise', :git => 'git://github.com/plataformatec/devise.git'
 gem 'omniauth'
+gem 'omniauth-facebook'

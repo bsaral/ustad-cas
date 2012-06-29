@@ -2,9 +2,9 @@
 #   gem install sqlite3-ruby (not necessary on OS X Leopard)
 development:
   adapter: mysql2
-  database: sso-rails3-provider
-  username: root
-  password:
+  database: sso
+  username: sso
+  password: sso
   pool: 5
   timeout: 5000
 

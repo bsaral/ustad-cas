@@ -38,14 +38,16 @@ class AuthController < ApplicationController
     render text: "ERROR: #{params[:message]}"
   end
 
+  # Client: tarafinda lib/josh_id.rb ile karsilanir.
   def user
     hash = {
       provider: 'josh_id',
       id: current_user.id.to_s,
       info: {
-         email: current_user.email, # change if required
-         first_name: current_user.first_name, # change if required
-         last_name: current_user.last_name, # change if required
+         email: current_user.email,
+         first_name: current_user.first_name,
+         last_name: current_user.last_name,
+         institution_id: current_user.institution_id,
       }
     }
 

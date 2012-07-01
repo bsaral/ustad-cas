@@ -64,7 +64,7 @@ ActiveRecord::Schema.define(:version => 20120528102909) do
     t.string   "last_name"
     t.string   "status"
     t.date     "expiration_date"
-    t.integer  "institution_id"
+    t.integer  "institution_id",         :default => 1
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -1,0 +1,32 @@
+development:
+  adapter: mysql2
+  encoding: utf8
+  reconnect: false
+  database: sso
+  pool: 5
+  username: sso
+  password: sso
+  socket: /var/run/mysqld/mysqld.sock
+
+test: &test
+   adapter: mysql2
+   encoding: utf8
+   reconnect: false
+   database: sso_test
+   pool: 5
+   username: sso_test
+   password: sso_test
+   socket: /var/run/mysqld/mysqld.sock
+
+production:
+   adapter: mysql2
+   encoding: utf8
+   reconnect: false
+   database: sso_production
+   pool: 5
+   username: sso_production
+   password: sso_production
+   socket: /var/run/mysqld/mysqld.sock
+
+cucumber:
+  <<: *test

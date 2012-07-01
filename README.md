@@ -1,24 +1,18 @@
-# Single Sign-On using Devise and Omniauth
+# Ustad CAS
 
-We wanted to solve these problems:
+Authentication gerektiren servisler buradan yetkilenecekler.
 
-* A single User Manager application (which will authenticate ALL users with different roles)
-* Different internal applications which talk to User Manager for authentication
-* User should be able to login/sign-up via Social Networks like Twitter and Facebook.
-* Single Sign On between all applications.
+Olgunlaşma evresinde ki [provider](https://github.com/19test/sso-devise-omniauth-provider) ve
+[client](https://github.com/19test/sso-devise-omniauth-client).
 
-# The Custom Provider
 
-This custom provider acts as an omniauth client (to connect to Twitter & Facebook) AND also
-acts as a omniauth provider (via auth_controller) to authenticate internal applications.
+# Kurulum
 
-# Usage
+Ayrıntıları,
 
-Clone this repository and do a bundle install. NOTE: We are using devise master HEAD
-because it has the latest omniauth integration code.
-
-    git clone git://github.com/joshsoftware/sso-devise-omniauth-provider.git
-    bundle install
+    $ git clone git@github.com:19/ustad-cas.git
+    $ git checkout master
+    $ bundle install
     rake db:create
     rake db:migrate
     rake db:seed

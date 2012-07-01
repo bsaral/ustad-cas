@@ -18,15 +18,12 @@ gem 'omniauth'
 # gem 'omniauth-facebook'
 # gem 'omniauth-twitter'
 
-group :test do
-  gem 'sqlite3'
+gem "mysql2"
+
+group :test, :development do
+  gem 'database_cleaner'
+  gem 'rspec'
+  gem 'spork'
 end
 
-group :development do
-    gem 'mysql2'
-end
-
-group :production do
-  gem 'pg'
-  gem 'activerecord-postgresql-adapter'
-end
+gem 'cucumber-rails', group: "test"

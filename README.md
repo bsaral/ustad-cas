@@ -51,3 +51,6 @@ Sunucu tarafında yapılacak ayarlar.
 
 Konsol yardımıyla `config/omniauth.yml`'da verdiğiniz APP_ID ve APP_SECRET ile
 bir `Client` oluştrun.
+
+   !ruby
+   > Client.create(app_id: APP_ID, app_secret: APP_SECRET)

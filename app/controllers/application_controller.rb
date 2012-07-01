@@ -6,9 +6,13 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
 
   def yon
-    logger.info { "DEBUG: START: yon: devam ... STOP" }
+    logger.info { "DEBUG: START: yon: #{session} STOP" }
     logger.info { "DEBUG: START: yon: #{request.remote_ip.inspect} ... STOP" }
 
+    unless session.has_key?("warden.user.user.key")
+      redirect_to new_user_session_path
+      return
+    end
 
     @user = User.find(session["warden.user.user.key"][1][0])
 

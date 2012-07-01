@@ -13,14 +13,19 @@ end
 
 gem 'jquery-rails'
 
-# gems for omniauth and devise
-gem 'devise', :git => 'git://github.com/plataformatec/devise.git'
+gem 'devise', git: 'git://github.com/plataformatec/devise.git'
 gem 'omniauth'
-gem 'omniauth-facebook'
+# gem 'omniauth-facebook'
+# gem 'omniauth-twitter'
 
-group :development, :test do
+group :test do
+  gem 'sqlite3'
+end
+
+group :development do
     gem 'mysql2'
 end
+
 group :production do
   gem 'pg'
   gem 'activerecord-postgresql-adapter'

@@ -1,9 +1,6 @@
 Rails.application.config.middleware.use OmniAuth::Builder do
-  configure do |config|
-    config.path_prefix = '/auth'
-  end
-
-  provider :facebook, '251388158310534', '453fdb776a9bfed8d8350c0ab897a22a' 
+  #provider :twitter, 'CONSUMER_KEY', 'CONSUMER_SECRET'
+  #provider :facebook, 'APP_ID', 'APP_SECRET'
+  #provider :linked_in, 'CONSUMER_KEY', 'CONSUMER_SECRET'
   #provider :google, 'example.com', 'secret'
-  #provider :twitter, 'twitter-appid', 'twitter-app-secret'
 end

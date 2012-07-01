@@ -1,4 +1,4 @@
-== Single Sign-On using Devise and Omniauth ==
+# Single Sign-On using Devise and Omniauth
 
 We wanted to solve these problems:
 
@@ -7,12 +7,12 @@ We wanted to solve these problems:
 * User should be able to login/sign-up via Social Networks like Twitter and Facebook.
 * Single Sign On between all applications.
 
-== The Custom Provider
+# The Custom Provider
 
 This custom provider acts as an omniauth client (to connect to Twitter & Facebook) AND also
 acts as a omniauth provider (via auth_controller) to authenticate internal applications.
 
-== Usage
+# Usage
 
 Clone this repository and do a bundle install. NOTE: We are using devise master HEAD
 because it has the latest omniauth integration code.
@@ -21,9 +21,10 @@ because it has the latest omniauth integration code.
     bundle install
     rake db:create
     rake db:migrate
+    rake db:seed
 
 Create your Twitter App and Facebook App. Create the initializer file with the following omniauth configuration:( eg. I use config/initializers/omniauth.rb )
-  
+
     Rails.application.config.middleware.use OmniAuth::Builder do
       provider :twitter, 'twitter-appid', 'twitter-app-secret'
       provider :facebook, 'facebook-appid', 'facebook-app-secret'
@@ -37,7 +38,7 @@ In your browser, go for it:
 
     http://localhost:3000
 
-== Contributions
+# Contributions
 
 Please feel free to enhance this demo.
 For any doubts, please send an email to gautam@joshsoftware.com

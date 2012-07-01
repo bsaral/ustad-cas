@@ -1,12 +1,12 @@
 class AuthenticationsController < ApplicationController
-  before_filter :authenticate_user!, :except => [:create, :link, :add]
+  before_filter :authenticate_user!, except: [:create, :link, :add]
 
   def index
     @authentications = current_user.authentications.all
 
     respond_to do |format|
       format.html # index.html.erb
-      format.xml  { render :xml => @authentications }
+      format.xml  { render xml: @authentications }
     end
   end
 
@@ -19,7 +19,7 @@ class AuthenticationsController < ApplicationController
 
     if user.valid_password?(params[:user][:password])
       omniauth = session[:omniauth]
-      user.authentications.create!(:provider => omniauth['provider'], :uid => omniauth['uid'])
+      user.authentications.create!(provider: omniauth['provider'], uid: omniauth['uid'])
       session[:omniauth] = nil
       sign_in_and_redirect(:user, user)
     else
@@ -49,6 +49,7 @@ class AuthenticationsController < ApplicationController
       user = User.new
       user.apply_omniauth(omniauth)
       user.email = omniauth['extra'] && omniauth['extra']['user_hash'] && omniauth['extra']['user_hash']['email']
+
       if user.save
         flash[:notice] = "Successfully registered"
         sign_in_and_redirect(:user, user)

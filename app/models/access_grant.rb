@@ -24,7 +24,7 @@ class AccessGrant < ActiveRecord::Base
     end
   end
 
-  # Note: This is currently configured through devise, and matches the AuthController access token life 
+  # Note: This is currently configured through devise, and matches the AuthController access token life
   def start_expiry_period!
     self.update_attribute(:access_token_expires_at, Time.now + Devise.timeout_in)
   end

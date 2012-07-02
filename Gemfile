@@ -1,17 +1,25 @@
 source 'http://rubygems.org'
 
 gem 'rails', '3.2.6'
-gem 'execjs'
-gem 'therubyracer'
 
 # asset pipeline
 group :assets do
   gem 'sass-rails'
+  gem 'less-rails'
   gem 'coffee-rails'
+
   gem 'uglifier'
+  gem 'therubyracer'
 end
 
+gem 'slim'
+gem 'slim-rails'
+gem 'less-rails-bootstrap'
+
+gem 'formtastic'
+
 gem 'jquery-rails'
+gem 'execjs'
 
 gem 'devise', git: 'git://github.com/plataformatec/devise.git'
 gem 'omniauth', '1.1.0'
@@ -20,10 +28,11 @@ gem 'omniauth', '1.1.0'
 
 gem "mysql2"
 
-group :test, :development do
+group :test do
   gem 'database_cleaner'
+  gem 'cucumber-rails'
+  gem 'capybara'
+  gem 'factory_girl_rails'
   gem 'rspec'
   gem 'spork'
 end
-
-gem 'cucumber-rails', group: "test"

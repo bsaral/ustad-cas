@@ -1,16 +1,16 @@
 class User < ActiveRecord::Base
-  has_many :authentications, :dependent => :delete_all
-  has_many :access_grants, :dependent => :delete_all
+  has_many :authentications, dependent: :delete_all
+  has_many :access_grants, dependent: :delete_all
 
-  before_validation :initialize_fields, :on => :create
+  before_validation :initialize_fields, on: :create
 
-  devise :database_authenticatable, :registerable, :token_authenticatable,
-         :recoverable, :timeoutable, :trackable, :validatable, :rememberable
+  devise :database_authenticatable, :token_authenticatable,
+         :timeoutable, :trackable, :rememberable
 
   self.token_authentication_key = "oauth_token"
 
   attr_accessible :email, :password, :password_confirmation, :remember_me,
-                  :first_name, :last_name, :institution_id
+                  :first_name, :last_name
 
   def apply_omniauth(omniauth)
     authentications.build(provider: omniauth['provider'], uid: omniauth['uid'])

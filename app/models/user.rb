@@ -1,7 +1,6 @@
 class User < ActiveRecord::Base
   has_many :authentications, :dependent => :delete_all
   has_many :access_grants, :dependent => :delete_all
-  belongs_to :institution
 
   before_validation :initialize_fields, :on => :create
 

@@ -15,8 +15,5 @@ OauthProviderDemo::Application.routes.draw do
   match 'authentications/:user_id/link' => 'authentications#link', as: :link_accounts
   match 'authentications/:user_id/add' => 'authentications#add', as: :add_account
 
-  # Application
-  match '/yon' => 'application#yon'
-
   root to: 'auth#welcome'
 end

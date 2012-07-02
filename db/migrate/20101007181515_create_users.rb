@@ -47,8 +47,6 @@ class CreateUsers < ActiveRecord::Migration
       t.string :status
       t.date :expiration_date
 
-      t.integer :institution_id, default: 1
-
       t.timestamps
     end
 

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag  "http://dev.ustad.us/assets/home.css" %>
+    <%= javascript_include_tag "http://dev.ustad.us/assets/home.js" %>
+
+    <link rel="shortcut icon" href="/assets/favicon.ico" />
+
+    <title>USTAD</title>
+  </head>
+
+  <body>
+    <div class="top-bar">
+      <div class="container">
+        <ul class="nav sf-menu2">
+        </ul>
+
+        <ul class="social">
+          <li><a class="flag-tr" href='/language/tr'></a></li>
+          <li><a class="flag-en" href='/language/en'></a></li>
+        </ul>
+
+      </div>
+    </div>
+
+    <div class="header">
+      <div class="container">
+        <div class="logo-container">
+          <a class="logo" href="http://ustad.us"><img src="http://dev.ustad.us/assets/img/logo.png" alt="" /></a>
+          <span class="tagline">Fulfill Your Potential With Us</span>
+        </div>
+
+        <ul id="main-nav" class="sf-menu">
+        </ul>
+
+      </div>
+    </div>
+
+    <% [:warning, :error, :success, :info, :notice].each do |level| %>
+      <% unless flash[level].blank? %>
+        <div class="page container clearfix">
+          <div class="alert-message <= level %> fade in" data-alert="alert">
+            <a class="close" href="#">×</a>
+            <center>
+              <%= content_tag :p, simple_format(flash[level], :style => 'font-size: 14px; font-weight: bold;') %>
+            </center>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+
+
+    <%= yield %>
+
+
+    <div id="alternate">
+    </div>
+
+  </body>
+</html>

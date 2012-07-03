@@ -1,6 +1,16 @@
-meta http-equiv='refresh' content='2;url=http://dev.ustad.us'
+meta http-equiv='refresh' content='3;url=http://dev.ustad.us'
 
-div
-  Successfully login as = @current_user.first_name = @current_user.last_name
+div style="margin:50px"
 
-  In 2 seconds, we redirect to Ustad
+div class="callout container clearfix"
+  div class="callout-info"
+    h2 Route to
+    
+    hr
+
+    p style="font-size: 17px;"
+      |  Successfully login as 
+      b "#{@current_user.email}". 
+      |  In 3 seconds, we redirect to Ustad. 
+      | If not, you 
+      a href="http://dev.ustad.us" click me.

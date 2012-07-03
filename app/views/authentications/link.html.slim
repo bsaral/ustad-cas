@@ -1,9 +1,0 @@
-h2 This email is already taken - Sign in to link these accounts!
-
-= form_for(@user, url: add_account_path(@user)) do |f|
-  p
-    = f.label :password
-    = f.password_field :password
-
-  p
-    = f.submit "Sign in"

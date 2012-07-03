@@ -23,7 +23,7 @@ class AuthenticationsController < ApplicationController
       session[:omniauth] = nil
       sign_in_and_redirect(:user, user)
     else
-      flash[:notice] = "Incorrect Password"
+      flash[:error] = t('sessions.response.incorrect_password')
       return redirect_to link_accounts_url(user.id)
     end
   end
@@ -43,7 +43,7 @@ class AuthenticationsController < ApplicationController
     authentication = Authentication.find_by_provider_and_uid(omniauth['provider'], omniauth['uid'])
 
     if authentication
-      flash[:notice] = "Signed in successfully"
+      flash[:notice] = t('sessions.response.signed_in_successfully')
       sign_in_and_redirect(:user, authentication.user)
     else
       user = User.new
@@ -51,7 +51,7 @@ class AuthenticationsController < ApplicationController
       user.email = omniauth['extra'] && omniauth['extra']['user_hash'] && omniauth['extra']['user_hash']['email']
 
       if user.save
-        flash[:notice] = "Successfully registered"
+        flash[:notice] = t('sessions.response.successfully_registered')
         sign_in_and_redirect(:user, user)
       else
         session[:omniauth] = omniauth.except('extra')
@@ -69,7 +69,7 @@ class AuthenticationsController < ApplicationController
   end
 
   def faiure
-    flash[:notice] = params[:message]
+    flash[:error] = t('E.message', message: params[:message])
     redirect_to root_path
   end
 

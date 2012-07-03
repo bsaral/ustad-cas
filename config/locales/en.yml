@@ -1,5 +1,22 @@
-# Sample localization file for English. Add more files in this directory for other locales.
-# See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
-
 en:
-  hello: "Hello world"
+  authentications:
+    welcome:
+      title: Route to
+      message: "Successfully login as %{email}"
+      redirect_to: In 3 seconds, we redirect to Ustad.
+      manual: If not, you <a href=http://dev.ustad.us>click me</a>
+  sessions:
+    new:
+      title: Login
+      form:
+        login: Login username or email
+        password: Password
+        sign_in: Sign in
+    response:
+      incorrect_password: Incorrect password
+      signed_in_successfully: Signed in successfully
+      successfully_registered: Successfully registered
+  E:
+    could_not_found_application: Could not find application
+    could_not_authenticate_access_code: Could not authenticate access code
+    message: "ERROR: %{message}"

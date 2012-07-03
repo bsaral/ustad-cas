@@ -25,5 +25,9 @@ OauthProviderDemo::Application.configure do
   config.assets.compress = false
 
   config.assets.debug = true
+
+  # rails-i18n
+  config.i18n.fallbacks = true
+  #config.i18n.available_locales = ['en-EN', :en]
 end
 

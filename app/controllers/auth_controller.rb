@@ -19,13 +19,13 @@ class AuthController < ApplicationController
     application = Client.authenticate(params[:client_id], params[:client_secret])
 
     if application.nil?
-      render json: {error: "Could not find application"}
+      render json: {error: t('E.could_not_found_application')}
       return
     end
 
     access_grant = AccessGrant.authenticate(params[:code], application.id)
     if access_grant.nil?
-      render json: {error: "Could not authenticate access code"}
+      render json: {error: t('E.could_not_authenticate_access_code')}
       return
     end
 
@@ -36,7 +36,7 @@ class AuthController < ApplicationController
   end
 
   def failure
-    render text: "ERROR: #{params[:message]}"
+    render text: t('E.message', message: params[:message])
   end
 
   # Client: tarafinda lib/josh_id.rb ile karsilanir.

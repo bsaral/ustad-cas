@@ -1,16 +1,16 @@
-meta http-equiv='refresh' content='3;url=http://dev.ustad.us'
+meta http-equiv='refresh' content='3000;url=http://dev.ustad.us'
 
 div style="margin:50px"
 
 div class="callout container clearfix"
   div class="callout-info"
-    h2 Route to
+    h2 = t('.title')
     
     hr
 
     p style="font-size: 17px;"
-      |  Successfully login as 
-      b "#{@current_user.email}". 
-      |  In 3 seconds, we redirect to Ustad. 
-      | If not, you 
-      a href="http://dev.ustad.us" click me.
+      = t('.message', email: @current_user.email) 
+      br/
+      = t('.redirect_to')
+      br/
+      = raw t('.manual')

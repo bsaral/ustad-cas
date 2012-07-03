@@ -1,0 +1,22 @@
+tr:
+  authentications:
+    welcome:
+      title: Yönlendirme
+      message: "%{email} olarak başarıyla giriş yaptınız."
+      redirect_to: 3 saniye içerisinde Ustad'a yönleneceksiniz.
+      manual: Eğer gerçekleşmezse, <a href=http://dev.ustad.us>tıklayınız</a>.
+  sessions:
+    new:
+      title: Giriş
+      form:
+        login: Kullanıcı adı veya e-posta
+        password: Parola
+        sign_in: Giriş
+    response:
+      incorrect_password: Geçersiz parola
+      signed_in_successfully: Başarılı giriş yaptınız
+      successfully_registered: Başarılı kaydoldunuz
+  E:
+    could_not_found_application: Uygulama bulunamadı
+    could_not_authenticate_access_code: Access code yetkilendirilemedi
+    message: "HATA: %{message}"

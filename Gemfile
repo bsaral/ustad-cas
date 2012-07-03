@@ -16,7 +16,7 @@ gem 'slim'
 gem 'slim-rails'
 gem 'less-rails-bootstrap'
 gem 'rails-i18n'
-#gem 'devise-i18n'
+gem 'devise-i18n'
 
 gem 'formtastic'
 

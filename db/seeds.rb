@@ -3,6 +3,7 @@ Client.create(name: "client1",
               app_secret: "92383b30045773ed83e99e5cdbce1496")
 
 User.create(email: "seyyah@bil.omu.edu.tr",
+            username: "seyyah",
             password: "secret",
             password_confirmation: "secret",
             status: "Active")

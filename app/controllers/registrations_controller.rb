@@ -7,7 +7,9 @@ class RegistrationsController < Devise::RegistrationsController
 #                     last_name: session[:omniauth] && session[:omniauth]['user_info'] &&
 #                                session[:omniauth]['user_info']['last_name'],
 #                     email: session[:omniauth_email] )
-     build_resource( email: session[:omniauth_email] )
+     build_resource(email: session[:omniauth_email],
+                    username: session[:omniauth] && session[:omniauth]['user_info'] &&
+                              session[:omniauth]['user_info']['username'])
      render :new
   end
 

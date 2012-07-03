@@ -50,6 +50,7 @@ class AuthController < ApplicationController
       id: current_user.id.to_s,
       info: {
          email: current_user.email,
+         username: current_user.username,
          #first_name: current_user.first_name,
       }
     }

@@ -2,15 +2,11 @@
 
 Authentication gerektiren servisler buradan yetkilenecekler.
 
-Olgunlaşma evresinde ki [provider](https://github.com/19test/sso-devise-omniauth-provider) ve
-[client](https://github.com/19test/sso-devise-omniauth-client).
-
-
 # Kurulum
 
 Ayrıntıları,
 
-    $ git clone git@github.com:19/ustad-cas.git
+    $ git clone git@github.com:ustad-us/ustad-cas.git
     $ git checkout master
     $ bundle install
 

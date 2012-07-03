@@ -5,12 +5,11 @@ class User < ActiveRecord::Base
   before_validation :initialize_fields, on: :create
 
   devise :database_authenticatable, :token_authenticatable,
-         :timeoutable, :trackable, :rememberable
+         :timeoutable, :trackable
 
   self.token_authentication_key = "oauth_token"
 
-  attr_accessible :email, :password, :password_confirmation, :remember_me,
-                  :first_name, :last_name
+  attr_accessible :email, :password, :password_confirmation
 
   def apply_omniauth(omniauth)
     authentications.build(provider: omniauth['provider'], uid: omniauth['uid'])
@@ -23,6 +22,6 @@ class User < ActiveRecord::Base
 
   def initialize_fields
     self.status = "Active"
-    self.expiration_date = 1.year.from_now
+    #self.expiration_date = 1.year.from_now
   end
 end

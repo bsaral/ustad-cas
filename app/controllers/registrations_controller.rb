@@ -2,11 +2,12 @@ class RegistrationsController < Devise::RegistrationsController
   before_filter :save_referrer, :only => :edit
 
   def new
-     build_resource( first_name: session[:omniauth] && session[:omniauth]['user_info'] &&
-                                 session[:omniauth]['user_info']['first_name'],
-                     last_name: session[:omniauth] && session[:omniauth]['user_info'] &&
-                                session[:omniauth]['user_info']['last_name'],
-                     email: session[:omniauth_email] )
+#     build_resource( first_name: session[:omniauth] && session[:omniauth]['user_info'] &&
+#                                 session[:omniauth]['user_info']['first_name'],
+#                     last_name: session[:omniauth] && session[:omniauth]['user_info'] &&
+#                                session[:omniauth]['user_info']['last_name'],
+#                     email: session[:omniauth_email] )
+     build_resource( email: session[:omniauth_email] )
      render :new
   end
 

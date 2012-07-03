@@ -5,6 +5,4 @@ Client.create(name: "client1",
 User.create(email: "seyyah@bil.omu.edu.tr",
             password: "secret",
             password_confirmation: "secret",
-            first_name: "seyyah",
-            last_name: "name",
             status: "Active")

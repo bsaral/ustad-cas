@@ -40,14 +40,17 @@ class AuthController < ApplicationController
   end
 
   # Client: tarafinda lib/josh_id.rb ile karsilanir.
+  #
+  # Provider'da User hakkinda extra bilgi tutacaksaniz
+  # - db/migration
+  # - burada info: hash'ine yeni satirlar ekle
   def user
     hash = {
       provider: 'josh_id',
       id: current_user.id.to_s,
       info: {
          email: current_user.email,
-         first_name: current_user.first_name,
-         last_name: current_user.last_name,
+         #first_name: current_user.first_name,
       }
     }
 

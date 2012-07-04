@@ -29,6 +29,9 @@ Her bir istemci için,
 
 ### İSTEMCİ / Client
 
+FIXME: bu [commit](https://github.com/19/osce/commit/c5735b9b245915dea6b13778c9be32d7fb5b90d0) 
+mesajında ayrıntılandırıldığı üzere daha fazlasına ihtiyaç duyulmaktadır. Buna göre aşağısı yetersizdir!
+
 İstenci tarafında yapılacak ayarlar.
 
 1. `config/omniauth.yml` dosyasını üretin. örnek:
